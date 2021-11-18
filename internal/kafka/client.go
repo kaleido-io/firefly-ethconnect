@@ -95,6 +95,10 @@ func (c *saramaKafkaClient) NewConsumer(k KafkaCommon) (KafkaConsumer, error) {
 	return h, nil
 }
 
+func (c *saramaKafkaClient) NewOffsetMonitor(topic, consumerGroup string, initialSize int64, interval time.Duration) (OffsetMonitor, error) {
+	return newOffsetMonitor(c.client, topic, consumerGroup, initialSize, interval)
+}
+
 type consumerGroupFactory interface {
 	NewConsumerGroupFromClient(groupID string, client sarama.Client) (sarama.ConsumerGroup, error)
 }

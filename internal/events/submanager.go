@@ -99,7 +99,7 @@ type subscriptionMGR struct {
 // CobraInitSubscriptionManager standard naming for cobra command params
 func CobraInitSubscriptionManager(cmd *cobra.Command, conf *SubscriptionManagerConf) {
 	cmd.Flags().StringVarP(&conf.EventLevelDBPath, "events-db", "E", "", "Level DB location for subscription management")
-	cmd.Flags().Uint64VarP(&conf.EventPollingIntervalSec, "events-polling-int", "j", 10, "Event polling interval (ms)")
+	cmd.Flags().Uint64VarP(&conf.EventPollingIntervalSec, "events-polling-int", "j", 10, "Event polling interval (sec)")
 	cmd.Flags().BoolVarP(&conf.WebhooksAllowPrivateIPs, "events-privips", "J", false, "Allow private IPs in Webhooks")
 }
 
