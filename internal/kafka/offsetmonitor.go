@@ -94,10 +94,6 @@ func (om *offsetMonitor) pollingLoop() {
 	}
 }
 
-func (om *offsetMonitor) calculateGap(partition int) (int64, error) {
-
-}
-
 func (om *offsetMonitor) UpdateInflightEstimate(msgSize int64) (inflightEstimate int64) {
 	om.mux.Lock()
 	defer om.mux.Unlock()
